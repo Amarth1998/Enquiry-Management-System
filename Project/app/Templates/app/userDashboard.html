@@ -1,0 +1,80 @@
+{% extends "master.html" %}
+{% block title %}User Dahboard {% endblock %}
+
+
+{% block content %}
+
+
+
+<div id="userd"> 
+
+    <div id="heading">WELCOME TO USER DASHBOARD </div>
+    {% for i in msg %}
+     <div id="fL">{{i.FirstName}}  {{i.lastName}}    </div>
+     <div id="ff">Email : {{i.Email}} &nbsp;  Contact : {{i.Contact}}   </div>
+     {% endfor %}
+   
+     <div class="con">
+        <button class="custom-button">
+          <a href="{% url 'GoToEnquiry' %}" class="button-link">FOR ENQUIRY CLICK HERE</a>
+        </button>
+      </div>
+
+</div>
+
+
+
+
+
+
+<style>
+#userd{
+    color: black;
+    width: 100%;
+}
+#heading{
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#fL{
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+    
+ }
+ #ff{
+    margin-top: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+ }
+
+ .con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  
+  }
+
+  .custom-button {
+    
+
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .custom-button a{
+    font-size: 20px;
+    text-decoration: none;
+  }
+ 
+</style>
+{% endblock %}    

@@ -1,0 +1,76 @@
+{% extends "master.html" %}
+
+
+
+{% block title %}All Enquiries By USER{% endblock %}
+
+
+{% block content %}
+<div id="aes">  All Enquiries Of Students </div>
+<table id="customers">
+              
+    <tr>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Enquiry</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+ {% for i in  k %}
+    <tr>
+        <td>{{i.Studentname}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Contact}}</td>
+        <td>{{i.Enquiry}} </td>
+        <td><a href="{% url 'UpdateEquiry' i.id %}" class="ud">UPDATE</a></td>
+        <td><a href="{% url 'deleteData' i.id %}" class="ud">DELETE</a></td>
+    </tr>
+  {% endfor %}
+    
+  
+</table>
+
+
+
+
+<style>
+    #customers {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+              }
+              
+              #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+              }
+              
+              #customers tr:nth-child(even){background-color: #f2f2f2;}
+              
+              #customers tr:hover {background-color: #ddd;}
+              
+              #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background:linear-gradient(-135deg, #c850c0, #4158d0);;
+                color: white;
+              }
+
+              #aes{
+                margin-top: 3.5%;
+                font-size: 50px;
+                text-align: center;
+                color: #4158d0;
+                
+               
+              }
+              .ud{
+                color: #c850c0;
+                text-decoration: none;
+              }
+  </style>
+  
+{% endblock %}
